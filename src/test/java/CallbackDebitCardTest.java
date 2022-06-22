@@ -7,9 +7,15 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CallbackDebitCardTest {
+
+    @BeforeEach
+    public void setup () {
+        open("http://localhost:9999");
+    }
+
     @Test
     void shouldSubmitRequest() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -21,7 +27,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfOneWord() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -33,7 +39,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfThreeWords() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев Васильевич");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -45,7 +51,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfUseEnglish() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Vasya");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -57,7 +63,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfNumberBeginNotPlus() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев Васильевич");
         $("[data-test-id=phone] input").setValue("79270000000");
         $("[data-test-id=agreement]").click();
@@ -69,7 +75,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfNumberIncorrectFormat() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев Васильевич");
         $("[data-test-id=phone] input").setValue("+43224556754");
         $("[data-test-id=agreement]").click();
@@ -81,7 +87,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfNumberConsistsOfLetters() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев Васильевич");
         $("[data-test-id=phone] input").setValue("79270000000");
         $("[data-test-id=agreement]").click();
@@ -93,7 +99,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestWithoutName() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=phone] input").setValue("79270000000");
         $("[data-test-id=agreement]").click();
         $("button.button").click();
@@ -104,7 +110,7 @@ public class CallbackDebitCardTest {
 
     @Test
     void shouldSubmitRequestIfCheckBoxOff() {
-        open("http://localhost:9999");
+        
         $("[data-test-id=name] input").setValue("Василий Васильев Васильевич");
         $("[data-test-id=phone] input").setValue("+43224556754");
         $("button.button").click();
