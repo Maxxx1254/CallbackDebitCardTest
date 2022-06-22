@@ -27,8 +27,8 @@ public class CallbackDebitCardTest {
         $("[data-test-id=agreement]").click();
         $("button.button").click();
 
-        $("[data-test-id=order-success]").shouldHave(
-                exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $("[data-test-id=name].input_invalid .input__sub").shouldHave(
+                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."
     }
 
     @Test
@@ -39,8 +39,8 @@ public class CallbackDebitCardTest {
         $("[data-test-id=agreement]").click();
         $("button.button").click();
 
-        $("[data-test-id=order-success]").shouldHave(
-                exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $("[data-test-id=name].input_invalid .input__sub").shouldHave(
+                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."
     }
 
     @Test
