@@ -34,7 +34,7 @@ public class CallbackDebitCardTest {
         $("button.button").click();
 
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(
-                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")
+                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CallbackDebitCardTest {
         $("button.button").click();
 
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(
-                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")
+                exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
     @Test
