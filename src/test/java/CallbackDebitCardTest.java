@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import org.junit.jupiter.api.BeforeEach;
 
 public class CallbackDebitCardTest {
 
