@@ -15,5 +15,4 @@ install:
 
 build_script:
   - chmod +x gradlew
-  - ./gradlew test --info # запускаем тест, флаг --info позволяет выводить больше информаци
-  - Dselenide.headless=true #Для запуска тестов в среде CI/CD браузер должен работать в headless режиме
+ - ./gradlew test -Dselenide.headless=true --info # запускаем тест, флаг --info позволяет выводить больше информаци
